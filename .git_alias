@@ -1,0 +1,17 @@
+alias grst='git restore'
+alias gcid='git --no-pager log --format="%H" -n 1'
+alias gs='git status'
+alias gds='git diff --staged'
+alias ga='git add'
+
+gsl() {
+ git stash list | head -n 10 | fzf --preview 'git stash show stash@{$(echo {} | grep -E -o "[0-9]")} --color'
+}
+
+gpop() {
+ git stash pop stash@{"$1"}
+}
+
+ss() {
+ git stash save -u "$1"
+}

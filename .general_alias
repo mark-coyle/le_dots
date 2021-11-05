@@ -1,0 +1,24 @@
+alias dotfiles='cd ~/dotfiles/'
+alias dps='docker ps --format "table {{.Names}}\t{{.Status}}"'
+alias desk='~/Desktop'
+alias nal='nvim ~/.bashrc'
+alias notes='cd ~/Desktop/notes/ && nvim'
+alias work='cd ~/Desktop/code/'
+alias t="open -a typora"
+
+# ruby
+alias bi='bundle install'
+alias be='bundle exec'
+
+# function to create a new note
+function new_note() {
+  nvim -c ":e ~/Desktop/Notes/$1"
+}
+
+function todo() {
+  nvim -c ":e ~/Desktop/Notes/TODO/$(date '+%Y-%m-%d').md"
+}
+
+dexec() {
+  docker exec -it $1 bash
+}

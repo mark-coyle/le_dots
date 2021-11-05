@@ -1,0 +1,10 @@
+# Check to see if dotfiles exists in ~, if not clone it before continuing
+
+# probably add an array for dotfiles -> target folders
+ln -s ~/dotfiles/alacritty ~/.config/alacritty
+ln -s ~/dotfiles/nvim ~/.config/nvim
+
+if [ "$(uname)" == "Darwin" ]; then
+  ln -s ~/dotfiles/yabai ~/.config/yabai
+  ln -s ~/dotfiles/skhd ~/.config/skhd
+fi
